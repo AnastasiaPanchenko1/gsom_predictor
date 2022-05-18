@@ -13,7 +13,7 @@ This README.md file contains information about:
 * how to open the port in remote VM
 * how to run app using docker and which port it uses
 
-## a) Information about source data and some statistics
+## a) Information about source data
 
 Data for the project was taken from [Yandex Reality classified](https://realty.yandex.ru) containing real estate listings for apartments in St. Petersburg and Leningrad Oblast from 2016 till the middle of August 2018.
 Initial dataset consisted of 171186 observations and 17 columns.
@@ -105,11 +105,11 @@ Port 4444 was used:
 
       sudo ufw allow 4444
 
-To have the prediction of price online, you should go to [the postman](https://www.postman.com/), make the account there and make a new request. You should use get method and enter such line using your own Public IP of virtual machine:
+To have the prediction of price online, you should go to [the postman](https://www.postman.com/), make the account there and make a new request. You should use GET method and enter such line using your own Public IP of virtual machine:
 
     XX.XX.XXX.XXX:4444/predict_price
     
-After this you should provide all the required params for the model, also specify model version (1: without additional parameter or 2: with additional parameters) and press the Send button. Otherwise, if you do not specify all required params, service will return the error (500 Internal server error).
+After this you should provide all the required params for the model, also specify model version (1 means model without additional parameters or 2 which means model with additional parameters) and press the Send button. Otherwise, if you do not specify all required params, service will return the error (500 Internal server error).
 After you do it, you will see the predicted price for these specific parameters and model.
 
 ## e) Information about docker
